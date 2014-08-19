@@ -1,16 +1,24 @@
-// Default rendering rules for Maperitive resembling that of OSM Mapnik
-// http://maperitive.net
+// Customized rendering rules for Maperitive with a reduced/simplified color scheme
+// by Ulf Treger <ulf.treger@3plusx.de>
+// Used at www.3plusx.de/leo-site
 
-// Created by Igor Brejc
+// Rules based on default rendering rules for Maperitive
+// http://maperitive.net, created by Igor Brejc
 // Released under the Creative Commons Attribution-ShareAlike 3.0 License (http://creativecommons.org/licenses/by-sa/3.0/)
 
-// History:
+// History of default rendering rules
 // --------
 // 2011-07-26: Updated by Michael <quelbs_at_gmail.com>
 //		- added icons for parks, parking, restaurants and railway
 //		- added names for parks, restaurants
 //		- added rendering of living_street, highway=construction and (railway|public_transport)=platform
 //		- added special rendering for tunnels
+//
+// History of the customized rules
+// --------
+// 2012-07-07 Fork and customized version by Tamer Fazwy
+// 2014-01-07 Slightly improved version for https://www.hamburg-global.de/v1.0/ by Ulf Treger 
+// 2014-08-19 Update for http://www.3plusx.de/leo-site by Ulf Treger
 
 
 features
