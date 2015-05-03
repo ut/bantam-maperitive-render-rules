@@ -1,0 +1,106 @@
+// Urbanight rules
+
+// Created by Igor Brejc
+// Released under the Creative Commons Attribution-ShareAlike 3.0 License (http://creativecommons.org/licenses/by-sa/3.0/)
+
+features
+	points
+		
+	lines
+		highway named : highway AND (name OR ref)
+		highway unnamed : highway AND NOT (name OR ref)	
+		waterway : waterway
+		railway : railway
+		aeroway : aeroway
+	
+	areas
+		landuse : landuse OR man_made OR leisure OR amenity OR office OR shop OR craft OR emergency OR tourism OR historic OR sport
+		building : building=yes OR "residential area"
+		
+properties
+
+	map-background-color	: #FFFFEB
+	map-background-color	: white
+	map-background-opacity	: 1
+	map-sea-color : black
+	
+rules
+	target : highway named
+		define
+			line-color : #FFFFD1
+			line-color : white
+			line-opacity : 100%
+			line-width : 10:1;14:6;16:8;20:18
+			border-style : solid
+			border-color : #999
+			border-width : 16%			
+		draw : line
+
+	target : highway unnamed
+		define
+			line-color : yellow
+			line-opacity : 100%
+			line-width : 10:1;16:4
+			border-style : solid
+			border-color : #999
+			border-width : 0%				
+		// draw : line
+
+	target : railway
+		define
+			line-color : #999
+			line-style : dot
+			line-opacity : 100%
+			line-width : 10:1;16:3
+		draw : line
+
+	target : aeroway
+		define
+			line-color : violet
+			line-style : dash
+			line-opacity : 100%
+			line-width : 10:1;16:3
+		draw : line
+		
+	target : waterway
+		define
+			line-color : #00bff5
+			line-opacity : 100%
+			line-width : 10:1;16:3
+		draw : line
+
+	target : building
+		define
+			fill-color : #333
+			fill-opacity : 70% 
+			line-color : #333
+			line-opacity: 70%
+			fill-hatch: diagonalcross
+			fill-hatch-color: white
+			fill-hatch-color: #F4F4CD
+			fill-hatch-color: #E0E0AC
+			line-width : 2
+		draw : fill
+	
+	target : landuse
+		define
+			line-opacity : 5%
+			line-width : 1
+			line-style : solid
+		for : name OR ref
+			define
+				line-color : yellow
+				fill-color : #333
+				fill-color : white
+				fill-opacity : 70%
+				fill-hatch : nwse
+				fill-hatch-color : white
+		else
+			define
+				line-color : #a8472c
+				fill-color : #333
+				fill-opacity : 0%
+				fill-hatch : vertical
+				fill-hatch-color : white				
+		draw : fill
+				
